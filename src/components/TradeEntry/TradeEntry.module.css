@@ -1,0 +1,22 @@
+.container {
+  width: 600px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flexColumnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row-container {
+  display: flex;
+  flex-direction: row;
+}
