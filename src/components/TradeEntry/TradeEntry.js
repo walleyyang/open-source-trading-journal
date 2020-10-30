@@ -1,7 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateTradeEntry } from '../../actions';
+
 import styles from './TradeEntry.module.css';
 
-export default () => (
+const mapStateToProps = (state) => {
+  console.log(state.tradeEntry);
+
+  return state;
+};
+
+const TradeEntry = (state) => (
   <div className={styles.container}>
     <div className={styles.flexRowContainer}>
       <label htmlFor="type">Type</label>
@@ -51,8 +60,13 @@ export default () => (
     </div>
     <div>Display Tags Here</div>
     <div className={styles.flexEnd}>
+      <button type="button" onClick={() => state.updateTradeEntry()}>Update</button>
       <button type="button">Cancel</button>
+      <button type="button">Subtract Size</button>
+      <button type="button">Add Size</button>
       <button type="button">Close Trade</button>
     </div>
   </div>
 );
+
+export default connect(mapStateToProps, { updateTradeEntry })(TradeEntry);
